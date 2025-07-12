@@ -36,12 +36,14 @@ body {
       }
 
       .card {
-        background: #eeeeee52;
+        background: #eee;
         padding: 0.5rem;
         border-radius: 8px;
         width: 400px;
         box-shadow: 2px 2px 8px rgba(12, 173, 85, 0.1);
         transition: transform 0.3s;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
       }
 
       .card:hover {
@@ -808,7 +810,7 @@ header h1:hover {
         transition: color 0.3s, transform 0.3s;
       }
 
-    
+
 
 
 
