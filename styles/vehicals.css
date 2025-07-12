@@ -36,7 +36,7 @@ body {
       }
 
       .card {
-        background: #eee;
+        background: #eeeeee52;
         padding: 0.5rem;
         border-radius: 8px;
         width: 400px;
@@ -781,7 +781,7 @@ header h1:hover {
       }
 
       .card {
-        background: #eee;
+        background: #eeeeee71;
         padding: 0.5rem;
         border-radius: 8px;
         width: 400px;
