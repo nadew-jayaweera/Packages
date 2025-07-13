@@ -16,13 +16,26 @@
       margin: 0;
     }
 
-    body {
-       font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #333;
-      background-image: url('../Packages/images/New/bg.jpg');
-      background-repeat: no-repeat;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/New/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+}
+
 
     .navbar {
       display: flex;
@@ -52,12 +65,17 @@
       font-weight: bold;
     }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../Packages/images/New/banner1.jpg') no-repeat center center/cover;
-      color: rgb(255, 255, 255);
-      text-align: center;
-      padding: 150px 20px;
-    }
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('images/New/banner1.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 150px 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+    
 
     .hero h1 {
       font-size: 3em;
@@ -252,28 +270,28 @@
   <h2>Custom Transport Services (by KM)</h2>
   <div class="card-container">
     <div class="card">
-      <img src="../Packages/images/New/Private caer.jpg" alt="Car">
+      <img src="images/New/Private caer.jpg" alt="Car">
       <h3>Private Car</h3>
       <p>AC Car with Driver<br>Rs. 65 per KM</p>
       <button>Book Car</button>
     </div>
 
     <div class="card">
-      <img src="../Packages/images/New/van.jpg" alt="Van">
+      <img src="images/New/van.jpg" alt="Van">
       <h3>Passenger Van</h3>
       <p>Ideal for 6–12 passengers<br>Rs. 85 per KM</p>
       <button>Book Van</button>
     </div>
 
     <div class="card">
-      <img src="../Packages/images/New/bus.jpg" alt="Bus">
+      <img src="images/New/bus.jpg" alt="Bus">
       <h3>Luxury Bus Coach</h3>
       <p>Perfect for large groups<br>Rs. 120 per KM</p>
       <button>Book Bus</button>
     </div>
 
     <div class="card">
-      <img src="../Packages/images/New/cab.jpg" alt="Cab">
+      <img src="images/New/cab.jpg" alt="Cab">
       <h3>City Cab Service</h3>
       <p>Fast city rides<br>Rs. 50 per KM</p>
       <button>Book Cab</button>
@@ -284,13 +302,13 @@
     <h2>Packages for Local Tourists</h2>
     <div class="card-container">
       <div class="card">
-        <img src="../Packages/images/New/Ella.jpg" alt="Ella Tour">
+        <img src="images/New/Ella.jpg" alt="Ella Tour">
         <h3>Ella Weekend Escape</h3>
         <p>3 days | Train ride + hotel + breakfast</p>
         <button>Book Now</button>
       </div>
       <div class="card">
-        <img src="../Packages/images/New/yala.jpg" alt="Yala Safari">
+        <img src="images/New/yala.jpg" alt="Yala Safari">
         <h3>Yala Safari Adventure</h3>
         <p>2 days | Jeep safari + 4 meals + guide</p>
         <button>Book Now</button>
@@ -302,13 +320,13 @@
     <h2>Packages for Foreign Tourists</h2>
     <div class="card-container">
       <div class="card">
-        <img src="../Packages/images/New/sigiriya.jpg" alt="Sigiriya">
+        <img src="images/New/sigiriya.jpg" alt="Sigiriya">
         <h3>Cultural Triangle Tour</h3>
         <p>5 days | Sigiriya, Dambulla, Kandy</p>
         <button>Book Now</button>
       </div>
       <div class="card">
-        <img src="../Packages/images/New/Beach.webp" alt="Beach Tour">
+        <img src="images/New/Beach.webp" alt="Beach Tour">
         <h3>Sri Lankan Beach Paradise</h3>
         <p>7 days | Bentota, Mirissa, Galle</p>
         <button>Book Now</button>
@@ -320,13 +338,13 @@
     <h2>Transport Services</h2>
     <div class="card-container">
       <div class="card">
-        <img src="../Packages/images/New/van.jpg" alt="Van">
+        <img src="images/New/van.jpg" alt="Van">
         <h3>Private Van Hire (AC)</h3>
         <p>Perfect for families and small groups. Island-wide service.</p>
         <button>Inquire</button>
       </div>
       <div class="card">
-        <img src="../Packages/images/New/bus.jpg" alt="Bus">
+        <img src="images/New/bus.jpg" alt="Bus">
         <h3>Luxury Bus Coach</h3>
         <p>Airport pick-up, long-distance, and tour chartering.</p>
         <button>Inquire</button>
@@ -342,7 +360,7 @@
           <ul>
             <li><a href="https://swiftroutelanka.xyz">Home</a></li>
             <li><a href="https://places.swiftroutelanka.xyz">Places To Go</a></li>
-            <li><a href="https://vehical.swiftroutelanka.xyz">Vehical Renting</a></li>
+            <li><a href="https://packages.swiftroutelanka.xyz">Vehical Renting</a></li>
             <li><a href="https://contact.swiftroutelanka.xyz">Contact Us</a></li>
           </ul>
         </div>
