@@ -1,161 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vehicle Renting - Swift Route Lanka</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/vehicals.css">  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swift Route Lanka - Travel & Transport</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    body {
+       font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #333;
+      background-image: url('../Packages/images/New/bg.jpg');
+      background-repeat: no-repeat;
+    }
 
-    <script>
-      // Optional: Adjust popup position if card is near the edge
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".place-card").forEach(function (card) {
-          card.addEventListener("mousemove", function (e) {
-            const popup = card.querySelector(".place-popup");
-            if (popup) {
-              const rect = card.getBoundingClientRect();
-              popup.style.top = e.clientY - rect.top - 60 + "px";
-              popup.style.left = e.clientX - rect.left + "px";
-            }
-          });
-        });
-      });
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #024873;
+      padding: 15px 30px;
+      color: rgb(0, 0, 0);
+      flex-wrap: wrap;
+    }
 
-      //Toggle card paragraphs
-      function toggleMoreText(link) {
-        const p = link.parentElement;
-        const moreText = p.querySelector(".more-text");
-        if (moreText.style.display === "none") {
-          moreText.style.display = "inline";
-          link.textContent = "Show less";
-        } else {
-          moreText.style.display = "none";
-          link.textContent = "Show more";
-        }
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../Packages/images/New/banner1.jpg') no-repeat center center/cover;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 150px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.452);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 260px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 1.3em;
+      color: #024873;
+    }
+
+    .card p {
+      font-size: 1em;
+      padding: 0 15px 10px;
+      font-weight: 500;
+      color: #000;
+    }
+
+    .card button {
+      margin: 12px 0 18px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #024873;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
       }
-    </script>
-  </head>
-  <body>
 
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
 
-      <!-- Navigation -->
-  <header>
-    <h1 style="font-family: 'Pacifico', cursive;" >Swift Route Lanka</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="https://swiftroutelanka.xyz">Home</a></li>
-        <li><a href="https://places.swiftroutelanka.xyz">Places to Go</a></li>
-        <li><a href="https://vehical.swiftroutelanka.xyz">Vehicle Renting</a></li>
-        <li><a href="https://contact.swiftroutelanka.xyz">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Open menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </nav>
-  </header>
+      .hero h1 {
+        font-size: 2em;
+      }
 
-    <!-- Places section -->
-    <div class="container py-5">
-      <div class="row g-4">
+      .hero p {
+        font-size: 1em;
+      }
 
+      .nav-auth-buttons {
+        display: block;
+        margin: 10px 0 0 0;
+        text-align: right;
+      }
 
-            <!-- Vehicle Renting 1: Van -->
-            <div class="col-md-4">
-              <div class="cards">
-                <div class="card">
-                  <img src="images/Vehicals/VAN.jpg" style="height: 280px;" alt="Van" />
-                  <h3>VAN</h3>
-                  <p>
-                    "Spacious rides for your family or crew."
-                  </p>
-                </div>
-              </div>
-            </div>
+      .nav-btn {
+        margin: 4px 0;
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
 
-            <!-- Vehicle Renting 2: Car  -->
-            <div class="col-md-4">
-              <div class="cards">
-                <div class="card">
-                  <img src="images/Vehicals/CAR.jpg" style="height: 280px;" alt="Car " />
-                  <h3>Car </h3>
-                  <p>
-                    "Comfort and style, ready to roll."
-                  </p>
-                </div>
-              </div>
-            </div>
+<header>
+  <h1 style="font-family: 'Pacifico', cursive;">Swift Route Lanka</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="https://swiftroutelanka.xyz">Home</a></li>
+      <li><a href="https://places.swiftroutelanka.xyz">Places to Go</a></li>
+      <li><a href="https://vehical.swiftroutelanka.xyz">Vehicle Renting</a></li>
+      <li><a href="https://contact.swiftroutelanka.xyz">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+  <div class="nav-auth-buttons" id="auth-buttons">
+    <a href="https://login.swiftroutelanka.xyz" class="nav-btn login-btn">Login</a>
+  </div>
+</header>
 
-            <!-- Vehicle Renting 3: Cab -->
-            <div class="col-md-4">
-              <div class="cards">
-                <div class="card">
-                  <img src="images/Vehicals/CAB 3.webp" style="height: 280px;" alt="Cab" />
-                  <h3>Cab</h3>
-                  <p>
-                     "Quick pickups, easy drop-offs."
-                  </p>
-                </div>
-              </div>
-            </div>
+<style>
+  .nav-auth-buttons {
+    display: flex;
+    margin-left: 20px;
+    vertical-align: middle;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-            <!-- Vehicle Renting 4: Bus-->
-            <div class="col-md-4">
-              <div class="cards">
-                <div class="card">
-                  <img src="images/vehicals/BUS.jpg" style="height: 280px;" alt="Bus" />
-                  <h3>Bus</h3>
-                  <p>
-                    "Group travel, made easy and affordable."
-                  </p>
-                </div>
-              </div>
-            </div>
+  .nav-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    margin: 0 4px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
 
-            <!-- Vehicle Renting 5: Bike -->
-            <div class="col-md-4">
-              <div class="cards">
-                <div class="card">
-                  <img src="images/Vehicals/BIKE.jpg" style="height: 280px;" alt="Bike" />
-                  <h3>Bike</h3>
-                  <p>
-                     "Zip through traffic, ride free."
-                  </p>
-                </div>
-              </div>
-            </div>
+  .login-btn {
+    background: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.07);
+  }
 
-            <!-- Vehicle Renting 6: Three-Wheel -->
-            <div class="col-md-4">
-              <div class="cards">
-                <div class="card">
-                  <img src="images/Vehicals/THREE WHEEL 2.jpg" style="height: 280px;" alt="Three-Wheel" />
-                  <h3>Three-Wheel</h3>
-                  <p>
-                    "Local rides made simple."
-                  </p>
-                </div>
-              </div>
-            </div>
+  .login-btn:hover {
+    background: #007bff;
+    color: #fff;
+  }
 
-          </div>
-        </div>
+  .register-btn {
+    background: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.07);
+  }
 
-        <!-- Add more places if you like -->
-      </div>
+  .register-btn:hover {
+    background: #0056b3;
+    color: #fff;
+  }
+</style>
+
+<section class="hero">
+  <h1>Discover Sri Lanka with Ease</h1>
+  <p>Explore the beauty of Sri Lanka through curated travel experiences and reliable transport options.</p>
+</section>
+
+<!-- Updated Transport Section -->
+<section id="transport">
+  <h2>Custom Transport Services (by KM)</h2>
+  <div class="card-container">
+    <div class="card">
+      <img src="../Packages/images/New/Private caer.jpg" alt="Car">
+      <h3>Private Car</h3>
+      <p>AC Car with Driver<br>Rs. 65 per KM</p>
+      <button>Book Car</button>
     </div>
 
-      <!-- Modern Footer -->
+    <div class="card">
+      <img src="../Packages/images/New/van.jpg" alt="Van">
+      <h3>Passenger Van</h3>
+      <p>Ideal for 6–12 passengers<br>Rs. 85 per KM</p>
+      <button>Book Van</button>
+    </div>
+
+    <div class="card">
+      <img src="../Packages/images/New/bus.jpg" alt="Bus">
+      <h3>Luxury Bus Coach</h3>
+      <p>Perfect for large groups<br>Rs. 120 per KM</p>
+      <button>Book Bus</button>
+    </div>
+
+    <div class="card">
+      <img src="../Packages/images/New/cab.jpg" alt="Cab">
+      <h3>City Cab Service</h3>
+      <p>Fast city rides<br>Rs. 50 per KM</p>
+      <button>Book Cab</button>
+    </div>
+  </div>
+</section>
+<section id="local">
+    <h2>Packages for Local Tourists</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="../Packages/images/New/Ella.jpg" alt="Ella Tour">
+        <h3>Ella Weekend Escape</h3>
+        <p>3 days | Train ride + hotel + breakfast</p>
+        <button>Book Now</button>
+      </div>
+      <div class="card">
+        <img src="../Packages/images/New/yala.jpg" alt="Yala Safari">
+        <h3>Yala Safari Adventure</h3>
+        <p>2 days | Jeep safari + 4 meals + guide</p>
+        <button>Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="foreign">
+    <h2>Packages for Foreign Tourists</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="../Packages/images/New/sigiriya.jpg" alt="Sigiriya">
+        <h3>Cultural Triangle Tour</h3>
+        <p>5 days | Sigiriya, Dambulla, Kandy</p>
+        <button>Book Now</button>
+      </div>
+      <div class="card">
+        <img src="../Packages/images/New/Beach.webp" alt="Beach Tour">
+        <h3>Sri Lankan Beach Paradise</h3>
+        <p>7 days | Bentota, Mirissa, Galle</p>
+        <button>Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="transport">
+    <h2>Transport Services</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="../Packages/images/New/van.jpg" alt="Van">
+        <h3>Private Van Hire (AC)</h3>
+        <p>Perfect for families and small groups. Island-wide service.</p>
+        <button>Inquire</button>
+      </div>
+      <div class="card">
+        <img src="../Packages/images/New/bus.jpg" alt="Bus">
+        <h3>Luxury Bus Coach</h3>
+        <p>Airport pick-up, long-distance, and tour chartering.</p>
+        <button>Inquire</button>
+      </div>
+    </div>
+  </section>
+  <!-- Modern Footer -->
   <footer class="site-footer">
     <div class="footer-main">
       <div class="footer-columns">
@@ -233,70 +411,5 @@
     </div>
   </footer>
 
-  <script>
-  // Card hover effect: show button, hide description
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.card').forEach(function(card) {
-      const desc = card.querySelector('.card-desc');
-      const btn = card.querySelector('.card-btn');
-      if (desc && btn) {
-        card.addEventListener('mouseenter', () => {
-          desc.style.display = 'none';
-          btn.style.display = 'block';
-        });
-        card.addEventListener('mouseleave', () => {
-          desc.style.display = 'block';
-          btn.style.display = 'none';
-        });
-      }
-    });
-
-    // Responsive nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', function() {
-      navLinks.classList.toggle('show');
-    });
-
-    // Optional: Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-      if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
-        navLinks.classList.remove('show');
-      }
-    });
-  });
-</script>
-
-    <script>
-      // Optional: Adjust popup position if card is near the edge
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".place-card").forEach(function (card) {
-          card.addEventListener("mousemove", function (e) {
-            const popup = card.querySelector(".place-popup");
-            if (popup) {
-              const rect = card.getBoundingClientRect();
-              popup.style.top = e.clientY - rect.top - 60 + "px";
-              popup.style.left = e.clientX - rect.left + "px";
-            }
-          });
-        });
-      });
-
-      //Toggle card paragraphs
-      function toggleMoreText(link) {
-        const p = link.parentElement;
-        const moreText = p.querySelector(".more-text");
-        if (moreText.style.display === "none") {
-          moreText.style.display = "inline";
-          link.textContent = "Show less";
-        } else {
-          moreText.style.display = "none";
-          link.textContent = "Show more";
-        }
-      }
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
 </html>
